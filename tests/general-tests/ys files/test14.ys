@@ -1,0 +1,10 @@
+irmovq $5, %rax
+irmovq $5, %rbx
+addq %rbx, %rax
+jle L5
+irmovq $1, %rcx
+subq %rcx, %rax
+halt
+L5:
+subq %rbx, %rax
+halt

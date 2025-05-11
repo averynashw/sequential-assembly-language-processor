@@ -1,0 +1,11 @@
+irmovq $10, %rax
+irmovq $3, %rbx
+rmmovq %rbx, 0x110(%rax)
+mrmovq 0x110(%rax), %rcx
+addq %rcx, %rax
+irmovq $2, %rdx
+subq %rdx, %rcx
+rmmovq %rcx, 0x114(%rax)
+mrmovq 0x114(%rax), %rsi
+andq %rsi, %rdx
+halt

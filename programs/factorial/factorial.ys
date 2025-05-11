@@ -1,0 +1,38 @@
+irmovq $5, %rdi       # n = 5
+irmovq $1, %rax       # factorial = 1
+irmovq $1, %r8        # r8 = 1; use for increment/decrement
+
+rrmovq %rdi, %rsi     # setting a temp var
+subq %r8, %rsi        # temp - 1 to see if temp < 1
+jge else              # jump if n >= 1
+irmovq $0, %rax       # factorial = 0, end
+halt
+
+
+else:
+irmovq $0, %rdx       # m = 0
+
+outer_loop:
+rrmovq %rdx, %rsi     # setting temp as m
+subq %rdi, %rsi       # temp - n should be less than 0
+jge done_outer_loop   # jump if m >= n
+
+rrmovq %rax, %rcx     # current = factorial
+irmovq $0, %r9        # i = 0
+
+inner_loop:
+rrmovq %r9, %rsi      # setting temp as i
+subq %rdx, %rsi       # temp - m should be less than 0
+jge done_inner_loop   # jump if i >= m
+
+addq %rcx, %rax       # current += factorial
+addq %r8, %r9         # i += 1
+jmp inner_loop        # jump to beginning of loop
+
+done_inner_loop:
+irmovq $0, %r9        # reset i
+addq %r8, %rdx        # m += 1
+jmp outer_loop
+
+done_outer_loop:
+halt

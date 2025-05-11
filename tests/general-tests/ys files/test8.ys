@@ -1,0 +1,8 @@
+irmovq $0xFF0, %rax
+irmovq $0x0FF, %rbx
+andq %rbx, %rax
+xorq %rax, %rbx
+irmovq $0xF0F, %rcx
+xorq %rcx, %rbx
+subq %rcx, %rbx
+halt

@@ -1,0 +1,8 @@
+0x000: 30f00a00000000000000 | irmovq $10, %rax
+0x00a: 30f30300000000000000 | irmovq $3, %rbx
+0x014: 6130                 | subq %rbx, %rax
+0x016: 6303                 | xorq %rax, %rbx
+0x018: 6030                 | addq %rbx, %rax
+0x01a: 30f10700000000000000 | irmovq $7, %rcx
+0x024: 6210                 | andq %rcx, %rax
+0x026: 00                   | halt

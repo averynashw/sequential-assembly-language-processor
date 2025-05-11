@@ -1,0 +1,13 @@
+0x000: 30f40003000000000000 | irmovq 0x300, %rsp
+0x00a: 30f00002000000000000 | irmovq $0x200, %rax
+0x014: 30f30100000000000000 | irmovq $0x1, %rbx
+0x01e: 30f10200000000000000 | irmovq $0x2, %rcx
+0x028: 40300000000000000000 | rmmovq %rbx, 0x0(%rax)
+0x032: 40100800000000000000 | rmmovq %rcx, 0x8(%rax)
+0x03c: 50200000000000000000 | mrmovq 0x0(%rax), %rdx
+0x046: 50600800000000000000 | mrmovq 0x8(%rax), %rsi
+0x050: 6026                 | addq %rdx, %rsi
+0x052: a06f                 | pushq %rsi
+0x054: b07f                 | popq %rdi
+0x056: 6372                 | xorq %rdi, %rdx
+0x058: 00                   | halt

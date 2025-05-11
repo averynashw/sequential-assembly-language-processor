@@ -1,0 +1,10 @@
+irmovq 0x300, %rsp
+irmovq $15, %rdi
+pushq %rdi
+irmovq $25, %rax
+addq %rdi, %rax
+popq %rsi
+subq %rsi, %rax
+pushq %rax
+popq %rcx
+halt

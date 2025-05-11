@@ -1,0 +1,10 @@
+0x000: 30f00500000000000000 | irmovq $5, %rax
+0x00a: 30f30500000000000000 | irmovq $5, %rbx
+0x014: 6030                 | addq %rbx, %rax
+0x016: 712c00000000000000   | jle L5
+0x01f: 30f10100000000000000 | irmovq $1, %rcx
+0x029: 6110                 | subq %rcx, %rax
+0x02b: 00                   | halt
+0x02c:                      | L5:
+0x02c: 6130                 | subq %rbx, %rax
+0x02e: 00                   | halt

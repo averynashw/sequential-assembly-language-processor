@@ -1,0 +1,13 @@
+irmovq $3, %rax
+irmovq $4, %rbx
+
+subq %rbx, %rax     # 3 - 4
+
+je true             # jump if 4 == 3
+
+false:
+irmovq $15, %rcx
+halt
+
+true:
+irmovq $14, %rcx

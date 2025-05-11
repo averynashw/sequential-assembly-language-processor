@@ -1,0 +1,39 @@
+0x000: 30f70500000000000000 | irmovq $5, %rdi       # n = 5
+0x00a: 30f00100000000000000 | irmovq $1, %rax       # fact = 1
+0x014: 30f80100000000000000 | irmovq $1, %r8        # r8 = 1; use for increment/decrement
+                            | 
+0x01e: 2076                 | rrmovq %rdi, %rsi     # setting a temp var
+0x020: 6186                 | subq %r8, %rsi        # temp - 1 to see if temp < 1
+0x022: 753600000000000000   | jge else              # jump if n >= 1
+0x02b: 30f00000000000000000 | irmovq $0, %rax       # fact = 0, end
+0x035: 00                   | halt
+                            | 
+                            | 
+0x036:                      | else:
+0x036: 30f20000000000000000 | irmovq $0, %rdx       # m = 0
+                            | 
+0x040:                      | outer_loop:
+0x040: 2026                 | rrmovq %rdx, %rsi     # setting temp as m
+0x042: 6176                 | subq %rdi, %rsi       # temp - n should be less than 0
+0x044: 758800000000000000   | jge done_outer_loop   # jump if m >= n
+                            | 
+0x04d: 2001                 | rrmovq %rax, %rcx     # currFact = fact
+0x04f: 30f90000000000000000 | irmovq $0, %r9        # i = 0
+                            | 
+0x059:                      | inner_loop:
+0x059: 2096                 | rrmovq %r9, %rsi      # setting temp as i
+0x05b: 6126                 | subq %rdx, %rsi       # temp - m should be less than 0
+0x05d: 757300000000000000   | jge done_inner_loop   # jump if i >= m
+                            | 
+0x066: 6010                 | addq %rcx, %rax       # currFact += fact
+0x068: 6089                 | addq %r8, %r9         # i += 1
+0x06a: 705900000000000000   | jmp inner_loop        # jump to beginning of loop
+                            | 
+0x073:                      | done_inner_loop:
+0x073: 30f90000000000000000 | irmovq $0, %r9        # reset i
+0x07d: 6082                 | addq %r8, %rdx        # m += 1
+0x07f: 704000000000000000   | jmp outer_loop
+                            | 
+0x088:                      | done_outer_loop:
+0x088: 00                   | halt
+                            | 

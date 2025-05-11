@@ -1,0 +1,13 @@
+0x000: 30f00400000000000000 | irmovq $4, %rax
+0x00a: 30f30300000000000000 | irmovq $3, %rbx
+                            | 
+0x014: 6130                 | subq %rbx, %rax     # 4 - 3
+                            | 
+0x016: 712a00000000000000   | jle true             # jump if 4 <= 3
+                            | 
+0x01f:                      | false:
+0x01f: 30f10f00000000000000 | irmovq $15, %rcx
+0x029: 00                   | halt
+                            | 
+0x02a:                      | true:
+0x02a: 30f10e00000000000000 | irmovq $14, %rcx

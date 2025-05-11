@@ -1,0 +1,4 @@
+0x000: 30f0ffffffffffffffff | irmovq 0xffffffffffffffff, %rax
+0x00a: 30f1ffffffffffffff7f | irmovq 0x7fffffffffffffff, %rcx
+                            | 
+0x014: 6101                 | subq %rax, %rcx

@@ -1,0 +1,4 @@
+irmovq 0xffffffffffffffff, %rax
+irmovq 0x7fffffffffffffff, %rcx
+
+subq %rax, %rcx

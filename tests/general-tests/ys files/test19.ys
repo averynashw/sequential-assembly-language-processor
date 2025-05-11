@@ -1,0 +1,14 @@
+irmovq $5, %rax
+irmovq $20, %rbx
+subq %rbx, %rax
+jle Correct
+jmp Error
+Correct:
+irmovq $1, %rcx
+addq %rcx, %rax
+jmp End
+Error:
+irmovq $2, %rcx
+subq %rcx, %rax
+End:
+halt

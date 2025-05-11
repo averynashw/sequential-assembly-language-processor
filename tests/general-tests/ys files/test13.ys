@@ -1,0 +1,10 @@
+irmovq $1, %rax
+irmovq $2, %rbx
+irmovq $3, %rcx
+irmovq $4, %rdx
+addq %rax, %rbx
+subq %rcx, %rdx
+xorq %rbx, %rdx
+andq %rdx, %rcx
+nop
+halt

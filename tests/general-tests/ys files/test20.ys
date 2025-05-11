@@ -1,0 +1,40 @@
+irmovq 0x800, %rsp
+
+irmovq $10, %rax
+irmovq $201231, %rbx
+irmovq $30, %rcx
+irmovq $401231, %rdx
+irmovq $50, %rsi
+irmovq $60, %rdi
+irmovq $701380, %rbp
+irmovq 0x100, %r8
+irmovq 0x569, %r9
+irmovq 0xe41, %r10
+irmovq 0x67f, %r11
+irmovq 0xabc, %r12
+irmovq 0x123, %r13
+irmovq 0xe91, %r14
+
+rmmovq %rsi, 32(%r9)
+pushq %rcx
+rmmovq %rbx, 32(%rsp)
+mrmovq 0(%rsp), %rsi
+popq %rax
+
+addq %rax, %rbx
+rmmovq %rbx, 48(%r11)
+pushq %rbp
+subq %rcx, %rdx
+xorq %rsi, %rdi
+andq %rbp, %rsp
+rmmovq %rsi, 10(%r12)
+mrmovq 0(%rsp), %rsi
+xorq %r8, %r9
+popq %r11
+addq %r10, %r11
+subq %r12, %r13
+rmmovq %rbx, 100(%rsp)
+andq %r14, %rax
+pushq %rax
+
+halt

@@ -1,0 +1,13 @@
+irmovq 0x300, %rsp
+irmovq $0x200, %rax
+irmovq $0x1, %rbx
+irmovq $0x2, %rcx
+rmmovq %rbx, 0x0(%rax)
+rmmovq %rcx, 0x8(%rax)
+mrmovq 0x0(%rax), %rdx
+mrmovq 0x8(%rax), %rsi
+addq %rdx, %rsi
+pushq %rsi
+popq %rdi
+xorq %rdi, %rdx
+halt

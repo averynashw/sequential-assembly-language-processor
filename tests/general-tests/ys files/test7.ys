@@ -1,0 +1,11 @@
+irmovq 0x300, %rsp
+irmovq $1, %rax
+irmovq $2, %rbx
+pushq %rax
+pushq %rbx
+popq %rcx
+popq %rdx
+addq %rcx, %rdx
+pushq %rdx
+popq %rbx
+halt

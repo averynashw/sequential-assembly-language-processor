@@ -1,0 +1,16 @@
+0x000: 30f40003000000000000 | irmovq 0x300, %rsp
+0x00a: 30f00a00000000000000 | irmovq $10, %rax
+0x014: 30f31400000000000000 | irmovq $20, %rbx
+0x01e: 2031                 | rrmovq %rbx, %rcx
+0x020: 40100001000000000000 | rmmovq %rcx, 0x100(%rax)
+0x02a: 50200001000000000000 | mrmovq 0x100(%rax), %rdx
+0x034: a02f                 | pushq %rdx
+0x036: b06f                 | popq %rsi
+0x038: 6062                 | addq %rsi, %rdx
+0x03a: 6303                 | xorq %rax, %rbx
+0x03c: 6132                 | subq %rbx, %rdx
+0x03e: 6203                 | andq %rax, %rbx
+0x040: 704a00000000000000   | jmp Finish
+0x049: 10                   | nop
+0x04a:                      | Finish:
+0x04a: 00                   | halt

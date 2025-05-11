@@ -1,0 +1,14 @@
+0x000: 30f00500000000000000 | irmovq $5, %rax
+0x00a: 30f31400000000000000 | irmovq $20, %rbx
+0x014: 6130                 | subq %rbx, %rax
+0x016: 712800000000000000   | jle Correct
+0x01f: 703d00000000000000   | jmp Error
+0x028:                      | Correct:
+0x028: 30f10100000000000000 | irmovq $1, %rcx
+0x032: 6010                 | addq %rcx, %rax
+0x034: 704900000000000000   | jmp End
+0x03d:                      | Error:
+0x03d: 30f10200000000000000 | irmovq $2, %rcx
+0x047: 6110                 | subq %rcx, %rax
+0x049:                      | End:
+0x049: 00                   | halt

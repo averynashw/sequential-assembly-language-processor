@@ -1,0 +1,42 @@
+0x000: 30f40008000000000000 | irmovq 0x800, %rsp
+                            | 
+0x00a: 30f00a00000000000000 | irmovq $10, %rax
+0x014: 30f30f12030000000000 | irmovq $201231, %rbx
+0x01e: 30f11e00000000000000 | irmovq $30, %rcx
+0x028: 30f24f1f060000000000 | irmovq $401231, %rdx
+0x032: 30f63200000000000000 | irmovq $50, %rsi
+0x03c: 30f73c00000000000000 | irmovq $60, %rdi
+0x046: 30f5c4b30a0000000000 | irmovq $701380, %rbp
+0x050: 30f80001000000000000 | irmovq 0x100, %r8
+0x05a: 30f96905000000000000 | irmovq 0x569, %r9
+0x064: 30fa410e000000000000 | irmovq 0xe41, %r10
+0x06e: 30fb7f06000000000000 | irmovq 0x67f, %r11
+0x078: 30fcbc0a000000000000 | irmovq 0xabc, %r12
+0x082: 30fd2301000000000000 | irmovq 0x123, %r13
+0x08c: 30fe910e000000000000 | irmovq 0xe91, %r14
+                            | 
+0x096: 40692000000000000000 | rmmovq %rsi, 32(%r9)
+0x0a0: a01f                 | pushq %rcx
+0x0a2: 40342000000000000000 | rmmovq %rbx, 32(%rsp)
+0x0ac: 50640000000000000000 | mrmovq 0(%rsp), %rsi
+0x0b6: b00f                 | popq %rax
+                            | 
+0x0b8: 6003                 | addq %rax, %rbx
+0x0ba: 403b3000000000000000 | rmmovq %rbx, 48(%r11)
+0x0c4: a05f                 | pushq %rbp
+0x0c6: 6112                 | subq %rcx, %rdx
+0x0c8: 6367                 | xorq %rsi, %rdi
+0x0ca: 6254                 | andq %rbp, %rsp
+0x0cc: 406c0a00000000000000 | rmmovq %rsi, 10(%r12)
+0x0d6: 50640000000000000000 | mrmovq 0(%rsp), %rsi
+0x0e0: 6389                 | xorq %r8, %r9
+0x0e2: b0bf                 | popq %r11
+0x0e4: 60ab                 | addq %r10, %r11
+0x0e6: 61cd                 | subq %r12, %r13
+0x0e8: 40346400000000000000 | rmmovq %rbx, 100(%rsp)
+0x0f2: 62e0                 | andq %r14, %rax
+0x0f4: a00f                 | pushq %rax
+                            | 
+0x0f6: 00                   | halt
+                            | 
+                            | 

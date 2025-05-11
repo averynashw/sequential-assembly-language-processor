@@ -1,0 +1,12 @@
+irmovq $0, %rcx
+irmovq $10, %rdx
+Loop:
+addq %rcx, %rdx
+irmovq $1, %rax
+addq %rax, %rcx
+subq %rcx, %rdx
+jl Loop
+jge Exit
+nop
+Exit:
+halt

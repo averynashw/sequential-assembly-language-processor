@@ -1,0 +1,43 @@
+irmovq $14, %rbx    # n = 14
+irmovq $0, %rcx     # fn2 = 0
+irmovq $1, %rdx     # fn1 = 1
+irmovq $0, %rax     # %rax corresponds to fn and will hold final value (should be 377)
+
+rrmovq %rbx, %r9    # store n in %r9
+subq %rcx, %r9      # n - 0 
+jle L1              # jump if n <= 0
+jmp L2
+
+L1:
+irmovq $0, %rax     # fn = 0
+
+L2:
+irmovq $1, %rsi     # store 1 in %rsi
+rrmovq %rbx, %r9    # store n in %r9
+subq %rsi, %r9      # n - 1 
+je L3               # jump if n == 1
+jmp L4
+
+L3:
+irmovq $1, %rax     # fn = 1
+
+L4:
+irmovq $2, %rsi     # i = 2
+
+LOOP:
+rrmovq %rsi, %rdi   # store value of i in %rdi
+subq %rbx, %rdi     # compute i - n
+jg EXIT             # exit loop if i > n
+
+rrmovq %rdx, %r8    # store fn1 in %r8
+addq %rcx, %r8      # fn1 + fn2 stored in %r8
+rrmovq %r8, %rax    # fn = fn1 + fn2
+rrmovq %rdx, %rcx   # fn2 = fn1
+rrmovq %rax, %rdx   # fn1 = fn
+
+irmovq $1, %rbp     # store 1 in %rbp
+addq %rbp, %rsi     # i++
+jmp LOOP
+
+EXIT:
+halt

@@ -1,0 +1,4 @@
+irmovq 0x8000000000000004, %rax
+irmovq 0x8000000000000004, %rcx
+
+addq %rax, %rcx

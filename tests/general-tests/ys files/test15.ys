@@ -1,0 +1,15 @@
+irmovq $15, %rax
+irmovq $10, %rbx
+addq %rbx, %rax  # %rax = 25
+subq %rax, %rbx
+jl PartTwo
+andq %rbx, %rax
+jne EndTest
+PartTwo:
+subq %rbx, %rax  # %rax = 15
+xorq %rbx, %rax
+jg EndTest
+irmovq $1, %rdx
+addq %rdx, %rbx
+EndTest:
+halt

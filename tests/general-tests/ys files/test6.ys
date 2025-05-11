@@ -1,0 +1,7 @@
+jmp Skip
+irmovq $5, %rax
+nop
+Skip:
+irmovq $10, %rbx
+addq %rax, %rbx
+halt
