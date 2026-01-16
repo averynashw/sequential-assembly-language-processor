@@ -23,6 +23,7 @@ irmovq $1, %rax     # fn = 1
 
 L4:
 irmovq $2, %rsi     # i = 2
+irmovq $1, %rbp     # store 1 in %rbp
 
 LOOP:
 rrmovq %rsi, %rdi   # store value of i in %rdi
@@ -35,7 +36,6 @@ rrmovq %r8, %rax    # fn = fn1 + fn2
 rrmovq %rdx, %rcx   # fn2 = fn1
 rrmovq %rax, %rdx   # fn1 = fn
 
-irmovq $1, %rbp     # store 1 in %rbp
 addq %rbp, %rsi     # i++
 jmp LOOP
 

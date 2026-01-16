@@ -15,7 +15,7 @@
 0x040:                      | outer_loop:
 0x040: 2026                 | rrmovq %rdx, %rsi     # setting temp as m
 0x042: 6176                 | subq %rdi, %rsi       # temp - n should be less than 0
-0x044: 758800000000000000   | jge done_outer_loop   # jump if m >= n
+0x044: 757e00000000000000   | jge done_outer_loop   # jump if m >= n
                             | 
 0x04d: 2001                 | rrmovq %rax, %rcx     # currFact = fact
 0x04f: 30f90000000000000000 | irmovq $0, %r9        # i = 0
@@ -30,10 +30,9 @@
 0x06a: 705900000000000000   | jmp inner_loop        # jump to beginning of loop
                             | 
 0x073:                      | done_inner_loop:
-0x073: 30f90000000000000000 | irmovq $0, %r9        # reset i
-0x07d: 6082                 | addq %r8, %rdx        # m += 1
-0x07f: 704000000000000000   | jmp outer_loop
-                            | 
-0x088:                      | done_outer_loop:
-0x088: 00                   | halt
+0x073: 6082                 | addq %r8, %rdx        # m += 1
+0x075: 704000000000000000   | jmp outer_loop
+                            |
+0x07e:                      | done_outer_loop:
+0x07e: 00                   | halt
                             | 

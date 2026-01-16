@@ -1,4 +1,4 @@
-irmovq 0x700, %rbp              # initialize base pointer
+irmovq $0x700, %rbp              # initialize base pointer
 
 irmovq $137, %rdi               # store 137 in %rdi
 rmmovq %rdi, (%rbp)             # store 137 in array[0]

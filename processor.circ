@@ -3547,8 +3547,8 @@ f 7*0 20 50 62 25 76 6d
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="219" y="249">SF</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="218" y="269">OF</text>
       <circ-anchor facing="east" x="170" y="250"/>
-      <circ-port dir="in" pin="210,360" x="100" y="290"/>
-      <circ-port dir="in" pin="210,410" x="100" y="250"/>
+      <circ-port dir="in" pin="200,360" x="100" y="290"/>
+      <circ-port dir="in" pin="200,410" x="100" y="250"/>
       <circ-port dir="in" pin="220,240" x="100" y="230"/>
       <circ-port dir="in" pin="220,280" x="100" y="240"/>
       <circ-port dir="in" pin="220,620" x="100" y="310"/>
@@ -3601,32 +3601,36 @@ f 7*0 20 50 62 25 76 6d
       <a name="label" val="cond_out"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(160,450)" name="Constant">
+    <comp lib="0" loc="(150,450)" name="Constant">
       <a name="value" val="0xfffffffffffffff8"/>
       <a name="width" val="64"/>
     </comp>
-    <comp lib="0" loc="(160,490)" name="Constant">
+    <comp lib="0" loc="(150,490)" name="Constant">
       <a name="value" val="0x8"/>
       <a name="width" val="64"/>
     </comp>
-    <comp lib="0" loc="(160,530)" name="Constant">
+    <comp lib="0" loc="(150,530)" name="Constant">
       <a name="value" val="0x0"/>
       <a name="width" val="64"/>
     </comp>
-    <comp lib="0" loc="(210,360)" name="Pin">
+    <comp lib="0" loc="(150,660)" name="Constant">
+      <a name="value" val="0x0"/>
+      <a name="width" val="64"/>
+    </comp>
+    <comp lib="0" loc="(150,700)" name="Constant">
+      <a name="value" val="0x0"/>
+      <a name="width" val="64"/>
+    </comp>
+    <comp lib="0" loc="(200,360)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="valA"/>
       <a name="radix" val="16"/>
       <a name="width" val="64"/>
     </comp>
-    <comp lib="0" loc="(210,410)" name="Pin">
+    <comp lib="0" loc="(200,410)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="valC"/>
       <a name="radix" val="16"/>
-      <a name="width" val="64"/>
-    </comp>
-    <comp lib="0" loc="(210,700)" name="Constant">
-      <a name="value" val="0x0"/>
       <a name="width" val="64"/>
     </comp>
     <comp lib="0" loc="(220,240)" name="Pin">
@@ -3712,14 +3716,14 @@ f 7*0 20 50 62 25 76 6d
     <comp lib="3" loc="(600,520)" name="Subtractor">
       <a name="width" val="64"/>
     </comp>
-    <comp lib="8" loc="(26,456)" name="Text">
+    <comp lib="8" loc="(10,455)" name="Text">
       <a name="text" val="-8"/>
     </comp>
-    <comp lib="8" loc="(30,536)" name="Text">
-      <a name="text" val="0"/>
-    </comp>
-    <comp lib="8" loc="(31,495)" name="Text">
+    <comp lib="8" loc="(15,495)" name="Text">
       <a name="text" val="8"/>
+    </comp>
+    <comp lib="8" loc="(15,660)" name="Text">
+      <a name="text" val="0"/>
     </comp>
     <comp lib="8" loc="(500,215)" name="Text">
       <a name="text" val="set CC only when icode = 6"/>
@@ -3736,9 +3740,6 @@ f 7*0 20 50 62 25 76 6d
     </comp>
     <comp lib="8" loc="(740,730)" name="Text">
       <a name="text" val="icode"/>
-    </comp>
-    <comp lib="8" loc="(79,708)" name="Text">
-      <a name="text" val="0"/>
     </comp>
     <comp lib="8" loc="(940,690)" name="Text">
       <a name="text" val="valB"/>
@@ -3768,16 +3769,17 @@ f 7*0 20 50 62 25 76 6d
     <wire from="(1190,310)" to="(1200,310)"/>
     <wire from="(1220,170)" to="(1220,180)"/>
     <wire from="(1290,270)" to="(1310,270)"/>
-    <wire from="(160,450)" to="(170,450)"/>
-    <wire from="(160,490)" to="(170,490)"/>
-    <wire from="(160,530)" to="(270,530)"/>
-    <wire from="(170,450)" to="(170,460)"/>
-    <wire from="(170,460)" to="(310,460)"/>
-    <wire from="(170,470)" to="(170,490)"/>
-    <wire from="(170,470)" to="(310,470)"/>
-    <wire from="(210,360)" to="(260,360)"/>
-    <wire from="(210,410)" to="(230,410)"/>
-    <wire from="(210,700)" to="(260,700)"/>
+    <wire from="(150,450)" to="(160,450)"/>
+    <wire from="(150,490)" to="(160,490)"/>
+    <wire from="(150,530)" to="(270,530)"/>
+    <wire from="(150,660)" to="(270,660)"/>
+    <wire from="(150,700)" to="(260,700)"/>
+    <wire from="(160,450)" to="(160,460)"/>
+    <wire from="(160,460)" to="(310,460)"/>
+    <wire from="(160,470)" to="(160,490)"/>
+    <wire from="(160,470)" to="(310,470)"/>
+    <wire from="(200,360)" to="(260,360)"/>
+    <wire from="(200,410)" to="(230,410)"/>
     <wire from="(220,240)" to="(330,240)"/>
     <wire from="(220,280)" to="(370,280)"/>
     <wire from="(220,590)" to="(220,620)"/>
@@ -3798,12 +3800,8 @@ f 7*0 20 50 62 25 76 6d
     <wire from="(260,420)" to="(310,420)"/>
     <wire from="(260,610)" to="(260,620)"/>
     <wire from="(260,610)" to="(310,610)"/>
-    <wire from="(260,620)" to="(260,630)"/>
+    <wire from="(260,620)" to="(260,680)"/>
     <wire from="(260,620)" to="(310,620)"/>
-    <wire from="(260,630)" to="(260,640)"/>
-    <wire from="(260,630)" to="(310,630)"/>
-    <wire from="(260,640)" to="(260,680)"/>
-    <wire from="(260,640)" to="(310,640)"/>
     <wire from="(260,680)" to="(260,690)"/>
     <wire from="(260,680)" to="(310,680)"/>
     <wire from="(260,690)" to="(260,700)"/>
@@ -3835,6 +3833,10 @@ f 7*0 20 50 62 25 76 6d
     <wire from="(270,500)" to="(310,500)"/>
     <wire from="(270,510)" to="(270,530)"/>
     <wire from="(270,510)" to="(310,510)"/>
+    <wire from="(270,630)" to="(270,640)"/>
+    <wire from="(270,630)" to="(310,630)"/>
+    <wire from="(270,640)" to="(270,660)"/>
+    <wire from="(270,640)" to="(310,640)"/>
     <wire from="(280,650)" to="(280,660)"/>
     <wire from="(280,650)" to="(310,650)"/>
     <wire from="(280,660)" to="(280,670)"/>
@@ -3844,6 +3846,7 @@ f 7*0 20 50 62 25 76 6d
     <wire from="(280,710)" to="(280,720)"/>
     <wire from="(280,710)" to="(310,710)"/>
     <wire from="(280,720)" to="(310,720)"/>
+    <wire from="(310,620)" to="(310,630)"/>
     <wire from="(330,240)" to="(330,520)"/>
     <wire from="(330,240)" to="(390,240)"/>
     <wire from="(330,520)" to="(330,770)"/>
@@ -4267,7 +4270,7 @@ f 7*0 20 50 62 25 76 6d
     </comp>
     <comp lib="0" loc="(610,530)" name="Pin">
       <a name="appearance" val="NewPins"/>
-      <a name="label" val="ifunc"/>
+      <a name="label" val="ifun"/>
       <a name="radix" val="16"/>
       <a name="width" val="4"/>
     </comp>
@@ -4291,27 +4294,6 @@ f 7*0 20 50 62 25 76 6d
     <comp lib="1" loc="(570,400)" name="NOT Gate"/>
     <comp lib="2" loc="(630,420)" name="Multiplexer">
       <a name="select" val="4"/>
-    </comp>
-    <comp lib="8" loc="(380,470)" name="Text">
-      <a name="text" val="ifunc = 1, jle"/>
-    </comp>
-    <comp lib="8" loc="(380,490)" name="Text">
-      <a name="text" val="ifunc = 2, jl"/>
-    </comp>
-    <comp lib="8" loc="(380,510)" name="Text">
-      <a name="text" val="ifunc = 3, je"/>
-    </comp>
-    <comp lib="8" loc="(380,530)" name="Text">
-      <a name="text" val="ifunc = 4, jne"/>
-    </comp>
-    <comp lib="8" loc="(380,550)" name="Text">
-      <a name="text" val="ifunc = 5, jge"/>
-    </comp>
-    <comp lib="8" loc="(380,570)" name="Text">
-      <a name="text" val="ifunc = 6, jg"/>
-    </comp>
-    <comp lib="8" loc="(385,450)" name="Text">
-      <a name="text" val="ifunc = 0, jmp"/>
     </comp>
     <comp lib="8" loc="(450,230)" name="Text">
       <a name="text" val="jge true if ~(SF ^ OF)"/>

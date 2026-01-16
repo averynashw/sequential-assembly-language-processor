@@ -25,12 +25,11 @@ rrmovq %r9, %rsi      # setting temp as i
 subq %rdx, %rsi       # temp - m should be less than 0
 jge done_inner_loop   # jump if i >= m
 
-addq %rcx, %rax       # current += factorial
+addq %rcx, %rax       # factorial += current
 addq %r8, %r9         # i += 1
 jmp inner_loop        # jump to beginning of loop
 
 done_inner_loop:
-irmovq $0, %r9        # reset i
 addq %r8, %rdx        # m += 1
 jmp outer_loop
 

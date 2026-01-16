@@ -3,7 +3,6 @@
 int main() {
   int n = 5;
   int factorial = 1;
-
   if (n < 1) {
     printf("0\n");
   }
@@ -16,6 +15,5 @@ int main() {
     }
     printf("%d\n", factorial);
   }
-
   return 0;
 }

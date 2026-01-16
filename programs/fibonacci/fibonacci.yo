@@ -23,21 +23,21 @@
                             | 
 0x072:                      | L4:
 0x072: 30f60200000000000000 | irmovq $2, %rsi     # i = 2
-                            | 
-0x07c:                      | LOOP:
-0x07c: 2067                 | rrmovq %rsi, %rdi   # store value of i in %rdi
-0x07e: 6137                 | subq %rbx, %rdi     # compute i - n
-0x080: 76a800000000000000   | jg EXIT             # exit loop if i > n
-                            | 
-0x089: 2028                 | rrmovq %rdx, %r8    # store fn1 in %r8
-0x08b: 6018                 | addq %rcx, %r8      # fn1 + fn2 stored in %r8
-0x08d: 2080                 | rrmovq %r8, %rax    # fn = fn1 + fn2
-0x08f: 2021                 | rrmovq %rdx, %rcx   # fn2 = fn1
-0x091: 2002                 | rrmovq %rax, %rdx   # fn1 = fn
-                            | 
-0x093: 30f50100000000000000 | irmovq $1, %rbp     # store 1 in %rbp
+0x07c: 30f50100000000000000 | irmovq $1, %rbp     # store 1 in %rbp
+                            |
+0x086:                      | LOOP:
+0x086: 2067                 | rrmovq %rsi, %rdi   # store value of i in %rdi
+0x088: 6137                 | subq %rbx, %rdi     # compute i - n
+0x08a: 76a800000000000000   | jg EXIT             # exit loop if i > n
+                            |
+0x093: 2028                 | rrmovq %rdx, %r8    # store fn1 in %r8
+0x095: 6018                 | addq %rcx, %r8      # fn1 + fn2 stored in %r8
+0x097: 2080                 | rrmovq %r8, %rax    # fn = fn1 + fn2
+0x099: 2021                 | rrmovq %rdx, %rcx   # fn2 = fn1
+0x09b: 2002                 | rrmovq %rax, %rdx   # fn1 = fn
+                            |
 0x09d: 6056                 | addq %rbp, %rsi     # i++
-0x09f: 707c00000000000000   | jmp LOOP
+0x09f: 708600000000000000   | jmp LOOP
                             | 
 0x0a8:                      | EXIT:
 0x0a8: 00                   | halt
